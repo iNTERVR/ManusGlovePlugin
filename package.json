@@ -2,7 +2,7 @@
   "name": "com.intervr.manus.glove.plugin",
   "displayName": "iNTERVR Plugin Manus Glove",
   "description": "Manus Glove Plugin of iNTERVR",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "unity": "2020.1",
   "keywords": [],
   "homepage": "https://github.com/iNTERVR/ManusGlovePlugin#readme",
