@@ -3,7 +3,7 @@
 ![NPM](https://img.shields.io/npm/v/com.intervr.manus.glove.plugin)
 ![NPM](https://img.shields.io/npm/l/com.intervr.manus.glove.plugin)
 
-# 소개https://github.com/iNTERVR/ManusGlovePlugin
+# 소개
 
 Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된 소프트웨어 개발 도구(SDK)입니다.
 
