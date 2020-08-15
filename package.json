@@ -1,0 +1,34 @@
+{
+  "name": "com.intervr.manus.glove.plugin",
+  "displayName": "iNTERVR Manus Glove Plugin",
+  "description": "Manus Glove Plugin of iNTERVR",
+  "version": "0.1.0",
+  "unity": "2020.1",
+  "keywords": [],
+  "homepage": "https://github.com/iNTERVR/ManusGlovePlugin#readme",
+  "bugs": {
+    "url": "https://github.com/iNTERVR/ManusGlovePlugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iNTERVR/ManusGlovePlugin.git#upm"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "iNTERVR",
+    "email": "ckbang7@gmail.com",
+    "url": "https://github.com/iNTERVR"
+  },
+  "dependencies": {
+    "com.intervr.if": "0.7.0"
+  },
+  "files": [
+    "*.md",
+    "*.meta",
+    "*.asmdef",
+    "*.xml",
+    "Editor",
+    "Runtime",
+    "Samples~"
+  ]
+}
