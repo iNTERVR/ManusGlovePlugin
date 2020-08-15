@@ -1,6 +1,6 @@
 {
   "name": "com.intervr.manus.glove.plugin",
-  "displayName": "iNTERVR Manus Glove Plugin",
+  "displayName": "iNTERVR Plugin Manus Glove",
   "description": "Manus Glove Plugin of iNTERVR",
   "version": "0.1.0",
   "unity": "2020.1",
@@ -20,7 +20,7 @@
     "url": "https://github.com/iNTERVR"
   },
   "dependencies": {
-    "com.intervr.if": "0.7.0"
+    "com.intervr.if.glove": "0.2.0"
   },
   "files": [
     "*.md",
