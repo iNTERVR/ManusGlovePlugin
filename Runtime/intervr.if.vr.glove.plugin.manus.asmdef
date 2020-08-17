@@ -1,7 +1,8 @@
 {
-    "name": "intervr.if.glove.plugin.manus",
+    "name": "intervr.if.vr.glove.plugin.manus",
     "references": [
         "GUID:4773707006d2fca42a234f263874271d",
+        "GUID:15a5cf1e26de4e14da1eb3701fd8f4d6",
         "GUID:4edf50c56afead544b1469c3a8a7defd",
         "GUID:0715616b45e7840468dd5ab65e52f66d",
         "GUID:3cc535e08f4df0e42aed273951c09fbe",
