@@ -2,9 +2,9 @@
 using System.Linq;
 using Zenject;
 
-namespace InterVR.IF.VR.Glove.Plugin.Manus.Installer
+namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Installer
 {
-    public class IF_VR_Glove_Manus_MonoInstaller : MonoInstaller<IF_VR_Glove_Manus_MonoInstaller>
+    public class IF_VR_Glove_SteamVRManus_MonoInstaller : MonoInstaller<IF_VR_Glove_SteamVRManus_MonoInstaller>
     {
         public List<ScriptableObjectInstaller> settings;
 

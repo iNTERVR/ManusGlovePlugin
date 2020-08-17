@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1449065082320613366}
   - component: {fileID: -7123359073546548771}
   m_Layer: 0
-  m_Name: intervr.if.vr.plugin.manus
+  m_Name: intervr.if.vr.glove.plugin.steamvrmanus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 11400000, guid: 084421f851c032241b2642d0aa44ef85, type: 2}
+  - {fileID: 11400000, guid: e6f0bb87dd401d2418d3ce26cf741859, type: 2}

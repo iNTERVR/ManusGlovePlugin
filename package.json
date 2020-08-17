@@ -1,7 +1,7 @@
 {
-  "name": "com.intervr.if.vr.glove.plugin.manus",
-  "displayName": "iNTERVR Plugin Manus VR Glove",
-  "description": "Manus VR Glove Plugin of iNTERVR",
+  "name": "com.intervr.if.vr.glove.plugin.steamvrmanus",
+  "displayName": "iNTERVR Plugin Steam VR Manus Glove",
+  "description": "Steam VR Manus Glove Plugin of iNTERVR",
   "version": "0.2.0",
   "unity": "2020.1",
   "keywords": [],
