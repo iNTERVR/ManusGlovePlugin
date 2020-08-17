@@ -1,11 +1,11 @@
-![IMG](https://img.shields.io/badge/pkg%20name-com.intervr.manus.glove.plugin-yellowgreen?style=for-the-badge&logo=appveyor)
+![IMG](https://img.shields.io/badge/pkg%20name-com.intervr.if.vr.glove.plugin.manus-yellowgreen?style=for-the-badge&logo=appveyor)
 
-![NPM](https://img.shields.io/npm/v/com.intervr.manus.glove.plugin)
-![NPM](https://img.shields.io/npm/l/com.intervr.manus.glove.plugin)
+![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.manus)
+![NPM](https://img.shields.io/npm/l/com.intervr.if.vr.glove.plugin.manus)
 
 # 소개
 
-Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된 소프트웨어 개발 도구(SDK)입니다.
+InterFramework(IF) Virtual Reality(VR) Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된 소프트웨어 개발 도구(SDK)입니다.
 
 > `2020.1.x` 버전에 맞춰서 제작되었습니다.
 
@@ -26,10 +26,10 @@ Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된
 * [프로젝트-메니패스트]인 `manifest.json`을 수정하기 위해 텍스트 편집기에서 오픈합니다.
   * `https://registry.npmnjs.org/`가 `scopedRegistries`에 포함되었는지 확인합니다.
     * `com.intervr`이 `scopes`에 포함되었는지 확인합니다.
-  * `dependencies`에 `com.intervr.manus.glove.plugin`의 최신버전을 추가합니다.
+  * `dependencies`에 `com.intervr.if.vr.glove.plugin.manus`의 최신버전을 추가합니다.
 
  간략한 예제는 다음과 같습니다. 여기에 표기된 `"X.Y.Z"` 버전은 [최신-릴리즈(NPM)]인
- ![NPM](https://img.shields.io/npm/v/com.intervr.manus.glove.plugin)에서 v를 제외한 나머지로 자리에 맞추어 대체 되어야 합니다.
+ ![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.manus)에서 v를 제외한 나머지로 자리에 맞추어 대체 되어야 합니다.
 ```json
 {
   "scopedRegistries": [
@@ -42,7 +42,7 @@ Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된
     }
   ],
   "dependencies": {
-    "com.intervr.manus.glove.plugin":  "X.Y.Z",
+    "com.intervr.if.vr.glove.plugin.manus":  "X.Y.Z",
     ...
   }
 }
@@ -54,5 +54,5 @@ Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된
 위의 과정을 통해 얻은 패키지는 유니티 패키지 매니저 UI에 나타날 것입니다. 이후로 유니티 패키지 매니저 UI 상에서 업데이트가 가능할 경우 `Update` 버튼이 활성화 되며 이를 클릭할 시 해당 버전으로 자동 업데이트 됩니다.
 
 [유니티]: https://unity3d.com/
-[최신-릴리즈(NPM)]: https://www.npmjs.com/package/com.intervr.manus.glove.plugin
+[최신-릴리즈(NPM)]: https://www.npmjs.com/package/com.intervr.if.vr.glove.plugin.manus
 [프로젝트-매니페스트]: https://docs.unity3d.com/Manual/upm-manifestPrj.html
