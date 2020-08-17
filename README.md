@@ -31,7 +31,7 @@ InterFramework(IF) Virtual Reality(VR) SteamVR Manus Glove Plugin은 iNTERVR에�
 * [프로젝트-메니패스트]인 `manifest.json`을 수정하기 위해 텍스트 편집기에서 오픈합니다.
   * `https://registry.npmnjs.org/`가 `scopedRegistries`에 포함되었는지 확인합니다.
     * `com.intervr`이 `scopes`에 포함되었는지 확인합니다.
-  * `dependencies`에 `com.intervr.if.vr.glove.plugin.manus`의 최신버전을 추가합니다.
+  * `dependencies`에 `com.intervr.if.vr.glove.plugin.steamvrmanus`의 최신버전을 추가합니다.
 
  간략한 예제는 다음과 같습니다. 여기에 표기된 `"X.Y.Z"` 버전은 [최신-릴리즈(NPM)]인
  ![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.steamvrmanus)에서 v를 제외한 나머지로 자리에 맞추어 대체 되어야 합니다.
