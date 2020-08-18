@@ -25,6 +25,7 @@ using Valve.VR;
 using InterVR.IF.Blueprints;
 using InterVR.IF.Defines;
 using InterVR.IF.Components;
+using InterVR.IF.VR.Events;
 
 namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Systems
 {
@@ -67,10 +68,46 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Systems
             return vrGloveHand.Active.Value;
         }
 
+        IF_VR_Steam_Hand convertSteamVRHand(IF_VR_Hand hand)
+        {
+            IF_VR_Steam_Hand steamVRHand;
+            if (hand.Type == IF_VR_HandType.Left)
+                steamVRHand = IF_VR_Steam_Player.instance.leftHand;
+            else
+                steamVRHand = IF_VR_Steam_Player.instance.rightHand;
+            return steamVRHand;
+        }
+
         public void Setup(IEntity entity)
         {
             var subscriptions = new List<IDisposable>();
             subscriptionsPerEntity.Add(entity, subscriptions);
+
+            eventSystem.Receive<IF_VR_Event_OnAttachedToHand>().Subscribe(evt =>
+            {
+                var hand = evt.HandEntity.GetComponent<IF_VR_Hand>();
+                var steamVRHand = convertSteamVRHand(hand);
+                var gloveHand = entity.GetComponent<IF_VR_Glove_Hand>();
+                if (hand.Type == gloveHand.Type)
+                {
+                    steamVRHand.Show();
+                    if (gloveHand.RenderModel)
+                        gloveHand.RenderModel.SetActive(false);
+                }
+            }).AddTo(subscriptions);
+
+            eventSystem.Receive<IF_VR_Event_OnDetachedToHand>().Subscribe(evt =>
+            {
+                var hand = evt.HandEntity.GetComponent<IF_VR_Hand>();
+                var steamVRHand = convertSteamVRHand(hand);
+                var gloveHand = entity.GetComponent<IF_VR_Glove_Hand>();
+                if (hand.Type == gloveHand.Type)
+                {
+                    steamVRHand.Hide();
+                    if (gloveHand.RenderModel)
+                        gloveHand.RenderModel.SetActive(true);
+                }
+            }).AddTo(subscriptions);
 
             Observable.EveryUpdate()
                 .Where(x => manusIsConnected(entity) && HandDataManager.IsInitialised)

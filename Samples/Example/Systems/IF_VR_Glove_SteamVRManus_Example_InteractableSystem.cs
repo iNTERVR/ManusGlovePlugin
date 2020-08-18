@@ -14,6 +14,7 @@ using EcsRx.Unity.Extensions;
 using InterVR.IF.VR.Plugin.Steam.InteractionSystem;
 using UnityEngine;
 using UniRx.Triggers;
+using InterVR.IF.VR.Glove.Modules;
 
 namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Example.Systems
 {
@@ -24,12 +25,15 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Example.Systems
         private Dictionary<IEntity, List<IDisposable>> subscriptionsPerEntity = new Dictionary<IEntity, List<IDisposable>>();
         private readonly IEventSystem eventSystem;
         private readonly IEntityDatabase entityDatabase;
+        private readonly IF_VR_Glove_IInterface vrGloveInterface;
 
         public IF_VR_Glove_SteamVRManus_Example_InteractableSystem(IEventSystem eventSystem,
-            IEntityDatabase entityDatabase)
+            IEntityDatabase entityDatabase,
+            IF_VR_Glove_IInterface vrGloveInterface)
         {
             this.eventSystem = eventSystem;
             this.entityDatabase = entityDatabase;
+            this.vrGloveInterface = vrGloveInterface;
         }
 
         public void Setup(IEntity entity)

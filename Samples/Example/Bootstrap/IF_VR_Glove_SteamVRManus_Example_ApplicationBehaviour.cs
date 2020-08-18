@@ -39,12 +39,15 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Example
             base.LoadModules();
 
             Container.LoadModule<IF_ToolModules>();
-            Container.LoadModule<IF_VR_ToolModules>();
+            Container.LoadModule<IF_VR_InterfaceModules>();
+            Container.LoadModule<IF_VR_StatusModules>();
             Container.LoadModule<IF_VR_Steam_InterfaceModules>();
+            Container.LoadModule<IF_VR_Steam_StatusModules>();
             Container.LoadModule<IF_VR_Steam_ComponentBuilderModules>();
             Container.LoadModule<IF_VR_Steam_MessageToEventModules>();
             Container.LoadModule<IF_VR_Glove_ToolModules>();
             Container.LoadModule<IF_VR_Glove_SteamVRManus_ToolModules>();
+            Container.LoadModule<IF_VR_Glove_SteamVRManus_StatusModules>();
         }
 
         protected override void LoadPlugins()
