@@ -2,16 +2,16 @@
   "name": "com.intervr.if.vr.glove.plugin.steamvrmanus",
   "displayName": "iNTERVR Plugin Steam VR Manus Glove",
   "description": "Steam VR Manus Glove Plugin of iNTERVR",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "unity": "2020.1",
   "keywords": [],
-  "homepage": "https://github.com/iNTERVR/ManusGlovePlugin#readme",
+  "homepage": "https://github.com/iNTERVR/SteamVRManusGlovePlugin#readme",
   "bugs": {
-    "url": "https://github.com/iNTERVR/ManusGlovePlugin/issues"
+    "url": "https://github.com/iNTERVR/SteamVRManusGlovePlugin/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iNTERVR/ManusGlovePlugin.git#upm"
+    "url": "git+https://github.com/iNTERVR/SteamVRManusGlovePlugin.git#upm"
   },
   "license": "MIT",
   "author": {
@@ -20,8 +20,8 @@
     "url": "https://github.com/iNTERVR"
   },
   "dependencies": {
-    "com.intervr.if.vr.glove": "0.2.0",
-    "com.intervr.if.vr.plugin.steam": "0.3.0"
+    "com.intervr.if.vr.glove": "1.0.0",
+    "com.intervr.if.vr.plugin.steam": "1.0.0"
   },
   "files": [
     "*.md",
@@ -31,5 +31,12 @@
     "Editor",
     "Runtime",
     "Samples~"
+  ],
+  "samples": [
+    {
+      "displayName": "Template",
+      "description": "Tmplate",
+      "path": "Samples~/Template"
+    }
   ]
 }

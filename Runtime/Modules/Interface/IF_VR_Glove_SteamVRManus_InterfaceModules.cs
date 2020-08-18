@@ -4,7 +4,7 @@ using InterVR.IF.VR.Glove.Modules;
 
 namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 {
-    public class IF_VR_Glove_SteamVRManus_ToolModules : IDependencyModule
+    public class IF_VR_Glove_SteamVRManus_InterfaceModules : IDependencyModule
     {
         public void Setup(IDependencyContainer container)
         {
