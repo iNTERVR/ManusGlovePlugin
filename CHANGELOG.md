@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.2.0] - 2020-08-20
+
+### Added
+
+- VR장비 문제 발생시 대체(fallback)지원
+
 ## [1.1.0] - 2020-08-19
 
 ### Changed

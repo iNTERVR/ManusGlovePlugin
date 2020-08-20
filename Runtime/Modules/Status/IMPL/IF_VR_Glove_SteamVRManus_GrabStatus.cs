@@ -5,6 +5,8 @@ using InterVR.IF.VR.Modules;
 using InterVR.IF.VR.Defines;
 using InterVR.IF.VR.Plugin.Steam.Extensions;
 using InterVR.IF.VR.Glove.Modules;
+using EcsRx.Entities;
+using EcsRx.Unity.Extensions;
 
 namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 {
@@ -17,19 +19,9 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
             this.vrGloveInterface = vrGloveInterface;
         }
 
-        IF_VR_Steam_Hand convertSteamVRHand(IF_VR_Hand hand)
+        public IF_VR_GrabType GetBestGrabbingType(IEntity handEntity, IF_VR_GrabType preferred, bool forcePreference = false)
         {
-            IF_VR_Steam_Hand steamVRHand;
-            if (hand.Type == IF_VR_HandType.Left)
-                steamVRHand = IF_VR_Steam_Player.instance.leftHand;
-            else
-                steamVRHand = IF_VR_Steam_Player.instance.rightHand;
-            return steamVRHand;
-        }
-
-        public IF_VR_GrabType GetBestGrabbingType(IF_VR_Hand hand, IF_VR_GrabType preferred, bool forcePreference = false)
-        {
-            var steamVRHand = convertSteamVRHand(hand);
+            var steamVRHand = handEntity.GetUnityComponent<IF_VR_Steam_Hand>();
             if (steamVRHand.noSteamVRFallbackCamera)
             {
                 if (Input.GetMouseButton(0))
@@ -47,7 +39,7 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
             //}
             if (preferred == IF_VR_Steam_GrabTypes.Grip.ConvertTo())
             {
-                if (vrGloveInterface.GetGrabState(hand.Type))
+                if (vrGloveInterface.GetGrabState(steamVRHand.handType.ConvertTo()))
                     return IF_VR_Steam_GrabTypes.Grip.ConvertTo();
                 else if (forcePreference)
                     return IF_VR_Steam_GrabTypes.None.ConvertTo();
@@ -55,14 +47,14 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 
             //if (vrGloveInterface.GetGrabState(hand.Type))
             //    return IF_VR_Steam_GrabTypes.Pinch.ConvertTo();
-            if (vrGloveInterface.GetGrabState(hand.Type))
+            if (vrGloveInterface.GetGrabState(steamVRHand.handType.ConvertTo()))
                 return IF_VR_Steam_GrabTypes.Grip.ConvertTo();
             return IF_VR_Steam_GrabTypes.None.ConvertTo();
         }
 
-        public IF_VR_GrabType GetGrabEnding(IF_VR_Hand hand, IF_VR_GrabType explicitType = IF_VR_GrabType.None)
+        public IF_VR_GrabType GetGrabEnding(IEntity handEntity, IF_VR_GrabType explicitType = IF_VR_GrabType.None)
         {
-            var steamVRHand = convertSteamVRHand(hand);
+            var steamVRHand = handEntity.GetUnityComponent<IF_VR_Steam_Hand>();
             if (explicitType != IF_VR_Steam_GrabTypes.None.ConvertTo())
             {
                 if (steamVRHand.noSteamVRFallbackCamera)
@@ -75,7 +67,7 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 
                 //if (explicitType == IF_VR_Steam_GrabTypes.Pinch.ConvertTo() && vrGloveInterface.GetGrabStateUp(hand.Type))
                 //    return IF_VR_Steam_GrabTypes.Pinch.ConvertTo();
-                if (explicitType == IF_VR_Steam_GrabTypes.Grip.ConvertTo() && vrGloveInterface.GetGrabStateUp(hand.Type))
+                if (explicitType == IF_VR_Steam_GrabTypes.Grip.ConvertTo() && vrGloveInterface.GetGrabStateUp(steamVRHand.handType.ConvertTo()))
                     return IF_VR_Steam_GrabTypes.Grip.ConvertTo();
             }
             else
@@ -90,15 +82,15 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 
                 //if (vrGloveInterface.GetGrabStateUp(hand.Type))
                 //    return IF_VR_Steam_GrabTypes.Pinch.ConvertTo();
-                if (vrGloveInterface.GetGrabStateUp(hand.Type))
+                if (vrGloveInterface.GetGrabStateUp(steamVRHand.handType.ConvertTo()))
                     return IF_VR_Steam_GrabTypes.Grip.ConvertTo();
             }
             return IF_VR_Steam_GrabTypes.None.ConvertTo();
         }
 
-        public IF_VR_GrabType GetGrabStarting(IF_VR_Hand hand, IF_VR_GrabType explicitType = IF_VR_GrabType.None)
+        public IF_VR_GrabType GetGrabStarting(IEntity handEntity, IF_VR_GrabType explicitType = IF_VR_GrabType.None)
         {
-            var steamVRHand = convertSteamVRHand(hand);
+            var steamVRHand = handEntity.GetUnityComponent<IF_VR_Steam_Hand>();
             if (explicitType != IF_VR_Steam_GrabTypes.None.ConvertTo())
             {
                 if (steamVRHand.noSteamVRFallbackCamera)
@@ -112,7 +104,7 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
                 // pinch not supoorted
                 //if (explicitType == IF_VR_Steam_GrabTypes.Pinch.ConvertTo() && vrGloveInterface.GetGrabStateDown(hand.Type))
                 //    return IF_VR_Steam_GrabTypes.Pinch.ConvertTo();
-                if (explicitType == IF_VR_Steam_GrabTypes.Grip.ConvertTo() && vrGloveInterface.GetGrabStateDown(hand.Type))
+                if (explicitType == IF_VR_Steam_GrabTypes.Grip.ConvertTo() && vrGloveInterface.GetGrabStateDown(steamVRHand.handType.ConvertTo()))
                     return IF_VR_Steam_GrabTypes.Grip.ConvertTo();
             }
             else
@@ -128,15 +120,15 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 
                 //if (vrGloveInterface.GetGrabStateDown(hand.Type))
                 //    return IF_VR_Steam_GrabTypes.Pinch.ConvertTo();
-                if (vrGloveInterface.GetGrabStateDown(hand.Type))
+                if (vrGloveInterface.GetGrabStateDown(steamVRHand.handType.ConvertTo()))
                     return IF_VR_Steam_GrabTypes.Grip.ConvertTo();
             }
             return IF_VR_Steam_GrabTypes.None.ConvertTo();
         }
 
-        public bool IsGrabbingWithOppositeType(IF_VR_Hand hand, IF_VR_GrabType type)
+        public bool IsGrabbingWithOppositeType(IEntity handEntity, IF_VR_GrabType type)
         {
-            var steamVRHand = convertSteamVRHand(hand);
+            var steamVRHand = handEntity.GetUnityComponent<IF_VR_Steam_Hand>();
             if (steamVRHand.noSteamVRFallbackCamera)
             {
                 if (Input.GetMouseButton(0))
@@ -152,14 +144,14 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
             //else
             if (type == IF_VR_Steam_GrabTypes.Grip.ConvertTo())
             {
-                return vrGloveInterface.GetGrabState(hand.Type);
+                return vrGloveInterface.GetGrabState(steamVRHand.handType.ConvertTo());
             }
             return false;
         }
 
-        public bool IsGrabbingWithType(IF_VR_Hand hand, IF_VR_GrabType type)
+        public bool IsGrabbingWithType(IEntity handEntity, IF_VR_GrabType type)
         {
-            var steamVRHand = convertSteamVRHand(hand);
+            var steamVRHand = handEntity.GetUnityComponent<IF_VR_Steam_Hand>();
             if (steamVRHand.noSteamVRFallbackCamera)
             {
                 if (Input.GetMouseButton(0))
@@ -170,7 +162,7 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Modules
 
             if (type == IF_VR_Steam_GrabTypes.Grip.ConvertTo())
             {
-                return vrGloveInterface.GetGrabState(hand.Type);
+                return vrGloveInterface.GetGrabState(steamVRHand.handType.ConvertTo());
             }
             //else
             //if (type == IF_VR_Steam_GrabTypes.Pinch.ConvertTo())
