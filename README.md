@@ -1,15 +1,31 @@
-![IMG](https://img.shields.io/badge/pkg%20name-com.intervr.if.vr.glove.plugin.steamvrmanus-yellowgreen?style=for-the-badge&logo=appveyor)
+![IMG](https://img.shields.io/badge/pkg%20name-com.intervr.if.vr.glove.plugin.steam-yellowgreen?style=for-the-badge&logo=appveyor)
 
-![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.steamvrmanus)
-![NPM](https://img.shields.io/npm/l/com.intervr.if.vr.glove.plugin.steamvrmanus)
+![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.steam)
+![NPM](https://img.shields.io/npm/l/com.intervr.if.vr.glove.plugin.steam)
 
 # 소개
 
-InterFramework(IF) Virtual Reality(VR) SteamVR Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된 소프트웨어 개발 도구(SDK)입니다.
+InterFramework(IF) Virtual Reality(VR) Steam VR Manus Glove Plugin은 iNTERVR에서 [유니티]를 기반으로 하여 제작된 소프트웨어 개발 도구(SDK)입니다.
 
 > `2020.1.x` 버전에 맞춰서 제작되었습니다.
 
 # 시작하기
+
+## 구성
+
+SteamVR Plugin은 아래의 패키지들로 구성되어 있습니다.
+
+* primary package
+  * com.intervr.if.vr.glove.plugin.steamvrmanus
+* dependencies
+  * com.intervr.if.vr.plugin.steam
+  * com.intervr.if.vr.glove
+    * com.intervr.if.vr
+      * com.intervr.if
+        * com.intervr.ts.ecsrx.unity
+          * com.intervr.ts.ecsrx
+          * com.intervr.ts.zenject
+          * com.intervr.ts.unirx
 
 ## 프로젝트 설정하기
 
@@ -23,7 +39,7 @@ InterFramework(IF) Virtual Reality(VR) SteamVR Manus Glove Plugin은 iNTERVR에�
 ## SteamVR SDK 설치
 
 * SteamVR플러그인을 사용하기 위해선 우선, [ValveSoftware]의 [SteamVR Unity Plugin]을 설치해야 합니다.
-* 설치 후 Windiws -> SteamVR Input을 통해 입력 바인딩을 기본값으로 하여 Save & Generate 합니다.
+* 설치 후 Windows -> SteamVR Input을 통해 입력 바인딩을 기본값으로 하여 Save & Generate 합니다.
 
 ## 유니티 프로젝트 매니페스트에 패키지 추가하기
 
