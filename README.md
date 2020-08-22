@@ -1,7 +1,7 @@
-![IMG](https://img.shields.io/badge/pkg%20name-com.intervr.if.vr.glove.plugin.steam-yellowgreen?style=for-the-badge&logo=appveyor)
+![IMG](https://img.shields.io/badge/pkg%20name-com.intervr.if.vr.glove.plugin.steamvrmanus-yellowgreen?style=for-the-badge&logo=appveyor)
 
-![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.steam)
-![NPM](https://img.shields.io/npm/l/com.intervr.if.vr.glove.plugin.steam)
+![NPM](https://img.shields.io/npm/v/com.intervr.if.vr.glove.plugin.steamvrmanus)
+![NPM](https://img.shields.io/npm/l/com.intervr.if.vr.glove.plugin.steamvrmanus)
 
 # 소개
 
@@ -13,7 +13,7 @@ InterFramework(IF) Virtual Reality(VR) Steam VR Manus Glove Plugin은 iNTERVR에
 
 ## 구성
 
-SteamVR Plugin은 아래의 패키지들로 구성되어 있습니다.
+SteamVR Manus Glove Plugin은 아래의 패키지들로 구성되어 있습니다.
 
 * primary package
   * com.intervr.if.vr.glove.plugin.steamvrmanus
