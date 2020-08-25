@@ -1,7 +1,13 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
-## [1.4.1] - 2020-08-21
+## [1.4.2] - 2020-08-25
+
+### Changed
+
+- Update SteamVRPlugin dependency
+
+## [1.4.1] - 2020-08-25
 
 ### Changed
 
