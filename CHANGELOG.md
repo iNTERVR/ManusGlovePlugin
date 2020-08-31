@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.5.0] - 2020-08-31
+
+### Changed
+
+- 글로브 사용시 Yaw값을 커스터마이징 가능하던 것을 삭제하고 고정 값 설정으로 변경 따라서 Yaw는 방설정시 HMD의 바라보는 각을 기준으로 장갑은 정확히 해당 방향으로 설정된다.
+- Update depenency
+
+
 ## [1.4.3] - 2020-08-25
 
 ### Changed

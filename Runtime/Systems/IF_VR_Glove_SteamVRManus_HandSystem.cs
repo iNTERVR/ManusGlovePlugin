@@ -165,22 +165,6 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Systems
                     var hand = wristView.AddComponent<ManusVR.Hands.Hand>();
                     hand.DeviceType = gloveHandType == IF_VR_HandType.Left ? device_type_t.GLOVE_LEFT : device_type_t.GLOVE_RIGHT;
                     hand.Initialize(manusRigger);
-                    if (gloveHandType == IF_VR_HandType.Left)
-                    {
-                        hand.HandYawOffset = vrGloveInterface.HandYawOffsetLeft.Value;
-                        vrGloveInterface.HandYawOffsetLeft.DistinctUntilChanged().Subscribe(f =>
-                        {
-                            hand.HandYawOffset = f;
-                        }).AddTo(subscriptions);
-                    }
-                    else
-                    {
-                        hand.HandYawOffset = vrGloveInterface.HandYawOffsetRight.Value;
-                        vrGloveInterface.HandYawOffsetRight.DistinctUntilChanged().Subscribe(f =>
-                        {
-                            hand.HandYawOffset = f;
-                        }).AddTo(subscriptions);
-                    }
 
                     GameObject.Destroy(skeleton);
                     GameObject.Destroy(instance.GetComponentInChildren<Animator>());
