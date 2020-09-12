@@ -2,7 +2,7 @@
   "name": "com.intervr.if.vr.glove.plugin.steamvrmanus",
   "displayName": "iNTERVR Plugin Steam VR Manus Glove",
   "description": "Steam VR Manus Glove Plugin of iNTERVR",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "unity": "2020.1",
   "keywords": [],
   "homepage": "https://github.com/iNTERVR/SteamVRManusGlovePlugin#readme",
@@ -20,8 +20,8 @@
     "url": "https://github.com/iNTERVR"
   },
   "dependencies": {
-    "com.intervr.if.vr.glove": "1.2.0",
-    "com.intervr.if.vr.plugin.steam": "1.4.3"
+    "com.intervr.if.vr.glove": "1.2.1",
+    "com.intervr.if.vr.plugin.steam": "1.4.5"
   },
   "files": [
     "*.md",
