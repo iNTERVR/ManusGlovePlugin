@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.5.2] - 2020-09-12
+
+### Updated
+
+- Dependency
+
 ## [1.5.1] - 2020-09-12
 
 ### Updated
