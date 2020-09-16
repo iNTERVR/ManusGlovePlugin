@@ -62,9 +62,6 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Example
             var settings = Container.Resolve<IF_VR_Glove_SteamVRManus_Example_Installer.Settings>();
             var interSettings = Container.Resolve<IF_Installer.Settings>();
             Debug.Log($"settings.Name is {settings.Name} in {interSettings.Name}");
-            var vrGloveInterface = Container.Resolve<IF_VR_Glove_IInterface>();
-            vrGloveInterface.HandYawOffsetLeft.Value = settings.HandYaw;
-            vrGloveInterface.HandYawOffsetRight.Value = settings.HandYaw;
         }
 
         private void OnDestroy()

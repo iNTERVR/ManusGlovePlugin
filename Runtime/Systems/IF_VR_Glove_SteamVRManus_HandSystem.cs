@@ -231,6 +231,12 @@ namespace InterVR.IF.VR.Glove.Plugin.SteamVRManus.Systems
                     var hand = wristView.GetComponent<Hand>();
                     if (HandDataManager.CanGetHandData(vrGloveInterface.PlayerNumber, hand.DeviceType))
                     {
+                        var yaw = IF_VR_Steam_Player.instance.trackingOriginTransform.localEulerAngles.y;
+                        if (hand.DeviceType == device_type_t.GLOVE_LEFT)
+                            hand.WristYaw = 180 - yaw;
+                        else
+                            hand.WristYaw = 180 + yaw;
+
                         ApolloHandData handData = HandDataManager.GetHandData(vrGloveInterface.PlayerNumber, hand.DeviceType);
                         hand.AnimateHand(handData);
                         hand.UpdateHand(handData);

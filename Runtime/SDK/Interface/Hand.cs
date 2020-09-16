@@ -14,6 +14,7 @@ namespace ManusVR.Hands
 
     public class Hand : MonoBehaviour
     {
+        public float WristYaw { get; set; }
         public Vector3 preRotWrist = new Vector3();
         public Vector3 postRotWrist = new Vector3();
         public Vector3 preRotThumb = new Vector3();
@@ -213,7 +214,7 @@ namespace ManusVR.Hands
         {
             if (Wrist == null) return;
 
-            Quaternion yawOffset = Quaternion.Euler(0, 180, 0);
+            Quaternion yawOffset = Quaternion.Euler(0, WristYaw, 0);
             Quaternion preRotation = Quaternion.Euler(preRotWrist) * yawOffset;
             Quaternion postRotation = Quaternion.Euler(postRotWrist);
 

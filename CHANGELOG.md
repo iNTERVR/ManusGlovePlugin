@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.5.3] - 2020-09-16
+
+### Fixed
+
+- 플레이어의 시작위치에 따른 장갑의 손목 회전값이 불규칙 하던 버그 수정
+
 ## [1.5.2] - 2020-09-12
 
 ### Updated
