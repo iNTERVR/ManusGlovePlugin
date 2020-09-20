@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.5.4] - 2020-09-20
+
+### Updated
+
+- Dependency: iNTERVR.IF.VR.GLOVE, iNTERVR.Plugin.SteamVR
+
 ## [1.5.3] - 2020-09-16
 
 ### Fixed
