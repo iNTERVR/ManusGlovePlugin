@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.5.6] - 2020-10-05
+
+### Updated
+
+- Dependency: iNTERVR.Plugin.SteamVR
+
 ## [1.5.5] - 2020-10-05
 
 ### Updated
