@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
-## [1.5.6] - 2020-10-05
+## [1.5.7] - 2020-10-21
 
 ### Updated
 
